@@ -1,0 +1,45 @@
+Q43: Write a program to check if a number is a strong number.
+
+
+Sample Test Cases:
+Input 1:
+145
+Output 1:
+Strong number
+
+Input 2:
+123
+Output 2:
+Not strong number
+
+
+#include <stdio.h>
+int factorial( int n) {
+   int fac = 1;
+   for(int i=1; i<=n;i++){
+      fac=fac*i;
+   }
+   return fac;
+}
+int main() {
+    
+int i,n,fact=0,temp;
+    printf("Enter number: ");
+    scanf(" %d", &n);
+    temp=n;
+    while(temp>0){
+      i = temp%10;
+      fact=fact + factorial(i);
+      temp=temp/10;
+    }
+
+    if(fact==n){
+   printf("it is a strong number");
+}
+else {
+   printf("it is not a strong number");
+}
+   
+
+    return 0;
+} 
